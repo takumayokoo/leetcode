@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func AssertEqual(t *testing.T, input interface{}, expected interface{}, output interface{}) {
+func AssertEqual(t *testing.T, expected interface{}, output interface{}, errMessage ...string) {
 	if output != expected {
-		t.Errorf("\nInput %v\nOutput %v\nExpected %v", input, output, expected)
+		t.Error(errMessage)
 	}
 }
