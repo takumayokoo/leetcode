@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestStrStr(t *testing.T) {
@@ -38,6 +39,6 @@ func TestStrStr(t *testing.T) {
 
 	for _, v := range tests {
 		output := strStr(v.input[0], v.input[1])
-		AssertEqual(t, v.want, output, fmt.Sprintf("\nInput %v\nExpected %v\nOutput %v\n", v.input, v.want, output))
+		assert.Equal(t, v.want, output, "Input %v", v.input)
 	}
 }
